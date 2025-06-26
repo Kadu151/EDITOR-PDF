@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leitor OCR - Extrair Texto de PDF e Imagens</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="convert.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="theme-purple">
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">Editor PDF</a>
+      <ul class="navbar-menu">
+        <li><a href="merge.html">Juntar PDFs</a></li>
+        <li><a href="split.html">Dividir PDF</a></li>
+        <li><a href="rotate.html">Girar arquivo</a></li>
+        <li><a href="compress.html">Compactar</a></li>
+        <li><a href="convert.html">Leitor OCR</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1><i class="fas fa-file-alt"></i> Leitor OCR - Extrair Texto</h1>
+
+    <div class="buttons-group">
+      <label for="file-input" class="custom-file-btn">
+        <i class="fas fa-upload"></i> Selecionar PDF ou Imagem
+      </label>
+      <input type="file" id="file-input" accept="application/pdf,image/*" hidden />
+
+      <button id="btn-copy" disabled>Copiar Texto</button>
+    </div>
+
+    <div id="loading"></div>
+
+    <textarea id="text-output" placeholder="O texto extraído aparecerá aqui..." readonly></textarea>
+
+    <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
+  </div>
+
+  <!-- Dependências -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+  <script src="convert.js"></script>
+  <script src="index.js"></script>
+
+</body>
+</html>
