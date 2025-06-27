@@ -26,7 +26,7 @@
         const page = await originalPdfDoc.getPage(i);
 
         // Reduz a escala para diminuir qualidade visual e peso
-        const viewport = page.getViewport({ scale: 0.90 });
+        const viewport = page.getViewport({ scale: 1.2 });
 
         const canvas = document.createElement('canvas');
         canvas.width = viewport.width;
@@ -36,7 +36,7 @@
         await page.render({ canvasContext: context, viewport }).promise;
 
         // Diminui a qualidade da imagem para reduzir o tamanho final
-        const imgData = canvas.toDataURL('image/jpeg', 0.90); // 0.5 = qualidade reduzida
+        const imgData = canvas.toDataURL('image/jpeg', 0.99); // 0.5 = qualidade reduzida
 
         const embeddedImage = await pdfLib.embedJpg(imgData);
         const pageWidth = embeddedImage.width;
