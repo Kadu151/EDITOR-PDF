@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Converter JPEG para PDF - Editor PDF</title>
+  <link rel="stylesheet" href="/styles/index.css" />
+  <link rel="stylesheet" href="/styles/merge.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="theme-purple">
+
+  <!-- Navbar -->
+ <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="navbar-logo">Editor PDF</a>
+      <ul class="navbar-menu">
+        <li><a href="/front/merge.html">Juntar PDFs</a></li>
+        <li><a href="/front/split.html">Dividir PDF</a></li>
+        <li><a href="/front/rotate.html">Girar arquivo</a></li>
+        <li><a href="/front/compress.html">Compactar</a></li>
+        <li><a href="/front/convert.html">Leitor OCR</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="merge-container">
+      <h1><i class="fas fa-file-image"></i> Converter JPEG para PDF</h1>
+
+      <form id="convert-form">
+        <label for="jpeg-files" class="custom-file-btn">
+          <i class="fas fa-upload"></i> Selecionar Imagens JPEG
+        </label>
+        <input type="file" id="jpeg-files" accept="image/jpeg" multiple hidden />
+
+        <div id="file-list" class="file-list"></div>
+
+        <input
+          type="text"
+          id="nome-pdf"
+          class="input-nome"
+          placeholder="Nome do arquivo PDF resultante (ex: imagens.pdf)"
+        />
+
+        <button type="submit" class="btn-action">
+          <i class="fas fa-file-export"></i> Converter para PDF
+        </button>
+      </form>
+
+      <a href="/front/index.html" class="btn-voltar">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </a>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="/backend/convert-jpeg.js"></script>
+  <script src="/backend/index.js"></script>
+</body>
+</html>

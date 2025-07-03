@@ -88,3 +88,18 @@ fileInput.addEventListener('change', async () => {
     loading.textContent = 'Tipo de arquivo não suportado. Selecione PDF ou imagem.';
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleciona todos elementos com atributo data-pagina
+  const botoesNavegacao = document.querySelectorAll("[data-pagina]");
+
+  botoesNavegacao.forEach((botao) => {
+    botao.style.cursor = "pointer"; // cursor de clique
+
+    botao.addEventListener("click", () => {
+      const destino = botao.getAttribute("data-pagina");
+      if (destino) {
+        window.location.href = destino;
+      }
+    });
+  });
+});
